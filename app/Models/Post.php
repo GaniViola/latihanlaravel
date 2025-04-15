@@ -23,17 +23,19 @@ class Post extends Model
     ];
 
     public static function alldata(){
-        return self::$blog_posts;
+        return collect(self::$blog_posts);
     }
 
     public static function singlepostdata($slug){
-        $posts = self::$blog_posts;
-        $new_post = [];
-        foreach ($posts as $post) {
-            if ($post['slug'] === $slug){
-                $new_post = $post;
-            }
-        }
-        return $new_post;
+        $posts = static::alldata();
+        // $new_post = [];
+        // foreach ($posts as $post) {
+        //     if ($post['slug'] === $slug){
+        //         $new_post = $post;
+        //     }
+        // }
+        // return $new_post;
+
+        return $posts->firstwhere('slug', $slug);
     }
 }
