@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
-use App\Models\Post;
 
 Route::get('/', function () {
     return view('pages.home', [
@@ -17,5 +16,4 @@ Route::get('/about', function(){
 });
 
 Route::get('/blog', [PostController::class, 'index']);
-
-route::get('/post/{slug}', [PostController::class, 'show']);
+Route::get('/post/{slug}', [PostController::class, 'show']);
