@@ -18,6 +18,6 @@ Route::get('/about', function(){
 
 Route::get('/blog', [PostController::class, 'index']);
 Route::get('/post/{post:slug}', [PostController::class, 'show']);
-Route::get('/coba/post/{post:slug}', [PostController::class, 'show']);
-Route::get('/category', [CategoryController::class, 'index']);
-Route::get('/coba/{category:slug}', [CategoryController::class, 'show']);
+
+Route::get('/categories/{category:slug}', [CategoryController::class, 'show']);
+Route::get('/categories', [CategoryController::class, 'index']);

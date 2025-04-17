@@ -4,8 +4,8 @@
 @section('content')
     <article>
         <h2>{{ $post->title }}</h2>
-        <p>By : {{ $post->author }} -> {{ $post->category->name }}</p>
+        <p>By : {{ $post->author }} -> <a href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></p>
         <p>{!! $post->body !!}</p>
-        <h2><a href="/blog">Back to blog</a></h2>   
+        <h2><a href="/blog">Back to blog</a></h2>
     </article>
 @endsection

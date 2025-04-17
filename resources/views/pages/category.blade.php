@@ -1,7 +1,10 @@
 @extends('layouts.app')
-
 @section('content')
-    @foreach ($categories as $category)
-        <p><a href="coba/{{ $category->slug }}">{{ $category->name }}</a></p>
+    <h1>Post Category | {{ $category }}</h1>
+    @foreach ($posts as $post)
+        <article>
+            <h2><a href="/post/{{ $post->slug }}">{{ $post->title }}</a></h2>
+            <p>{{ $post->excerpt }}</p>
+        </article>
     @endforeach
 @endsection
