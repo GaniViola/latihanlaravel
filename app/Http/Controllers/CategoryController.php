@@ -19,7 +19,7 @@ class CategoryController extends Controller
             'title' => "Posts Category",
             'title_halaman' => $category->name,
             'category' => $category->name,
-            'posts' => $category->posts
+            'posts' => $category->posts->load('user', 'category')
         ]);
     }
 }

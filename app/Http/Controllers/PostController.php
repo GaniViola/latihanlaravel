@@ -12,8 +12,7 @@ class PostController extends Controller
         return view('pages.posts', [
             'title' => 'Posts',
             'title_halaman' => 'all data',
-            // 'posts' => Post::all()
-            'posts' => Post::latest()->get()
+            'posts' => Post::with(['user', 'category'])->latest()->get()
         ]);
     }
 
@@ -28,7 +27,7 @@ class PostController extends Controller
         return view('pages.posts',[
             'title' => "Posts Author",
             'title_halaman' => $user->name, 
-            'posts' => $user->posts
+            'posts' => $user->posts->load('user', 'category')
         ]);
     }
 }
