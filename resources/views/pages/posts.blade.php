@@ -2,6 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
+<h1>Posts {{ $title_halaman }}</h1>
     @foreach ($posts as $post)
     <article class="mb-5 border-bottom pb-4">
         <h2><a href="/post/{{ $post->slug }}">{{ $post->title }}</a></h2>

@@ -11,6 +11,7 @@ class PostController extends Controller
     public function index() {
         return view('pages.posts', [
             'title' => 'Posts',
+            'title_halaman' => 'all data',
             // 'posts' => Post::all()
             'posts' => Post::latest()->get()
         ]);
@@ -25,7 +26,8 @@ class PostController extends Controller
 
     public function authors(User $user){
         return view('pages.posts',[
-            'title' => 'User Post',
+            'title' => "Posts Author",
+            'title_halaman' => $user->name, 
             'posts' => $user->posts
         ]);
     }
