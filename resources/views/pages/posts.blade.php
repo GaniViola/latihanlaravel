@@ -27,7 +27,7 @@
         @foreach ($posts->skip(1) as $post)
             <div class="col-md-4 mb-3 d-flex">
                 <div class="card h-100 w-100">
-                    <div class="position-absolute bg-dark px-3 py-2 text-white"><a href="/categories/{{ $post->category->slug }}" class="text-white">{{ $post->category->name }}</a></div>
+                    <div class="position-absolute bg-dark px-3 py-2 text-white rounded-2"><a href="/categories/{{ $post->category->slug }}" class="text-white">{{ $post->category->name }}</a></div>
                     <img src="{{ asset('img/'.$post->category->slug.'.jpg') }}" class="card-img-top" alt="{{ $post->category->name }}" style="height: 200px; object-fit: cover;">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title text-dark">
