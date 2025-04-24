@@ -18,6 +18,12 @@ Route::get('/about', function(){
 
 Route::get('/blog', [PostController::class, 'index']);
 Route::get('/post/{post:slug}', [PostController::class, 'show']);
-Route::get('/authors/{user:username}', [PostController::class, 'authors']);
-Route::get('/categories/{category:slug}', [CategoryController::class, 'show']);
+
+// Route::get('/authors/{user:username}', [PostController::class, 'authors']);
+// Route::get('/categories/{category:slug}', [CategoryController::class, 'show']);
 Route::get('/categories', [CategoryController::class, 'index']);
+
+// coba route name
+// Route::get('/inipercobaan', function(){
+//     dd(request('search'));
+// })->name('coba.compor');
