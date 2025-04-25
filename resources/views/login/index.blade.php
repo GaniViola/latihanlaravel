@@ -5,6 +5,14 @@
     <div class="row w-100">
       <div class="col-lg-5 col-lg-4 mx-auto">
         <div class="card shadow-sm p-4">
+
+          @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              {{ session('success') }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          @endif
+          
           <h4 class="text-center mb-4">Login</h4>
   
           <form action="" method="POST">
