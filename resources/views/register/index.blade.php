@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+<div class="container d-flex justify-content-center align-items-center min-vh-100 pt-5">
     <div class="row w-100">
       <div class="col-lg-5 col-lg-4 mx-auto">
         <div class="card shadow-sm p-4">

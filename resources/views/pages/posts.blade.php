@@ -2,14 +2,14 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="row d-flex align-items-center">
+<div class="row d-flex align-items-center pt-5">
     <!-- Kolom kiri: H1 -->
-    <div class="col-md-6">
+    <div class="col-md-6 mt-3">
         <h1 class="m-1">{{ $title_halaman }}</h1>
     </div>
 
     <!-- Kolom kanan: Form -->
-    <div class="col-md-6">
+    <div class="col-md-6 mt-3">
         <form action="/blog">
             @if (request('category'))
                 <input type="hidden" name="category" value="{{ request('category') }}">
