@@ -12,13 +12,26 @@
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
           @endif
+
+          @if (session()->has('loginError'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              {{ session('loginError') }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          @endif
           
           <h4 class="text-center mb-4">Login</h4>
   
-          <form action="" method="POST">
+          <form action="{{ route('login.perform') }}" method="POST">
+            @csrf
             <div class="mb-3">
-              <label for="username" class="form-label">Email or Username</label>
-              <input type="text" class="form-control" id="username" name="username" required>
+              <label for="email" class="form-label">Email</label>
+              <input type="text" name="email" id="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}">
+              @error('email')
+                <div class="invalid-feedback">
+                  {{ $message }}
+                </div>
+              @enderror
             </div>
   
             <div class="mb-3">
